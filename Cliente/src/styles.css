@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+/** General Styles*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+body{
+	font-family: 'PT Sans', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Merriweather', serif;
+}
+
+.btn{border-radius: 50px}
+.btn-default{background:#2E64FE; border-color:#2E64FE; color:#fff;}
+.btn-default:hover, .btn-default:focus{background:#00964d; color:#fff; border-color:#00964d }
+.btn-transparent{border:2px solid #fff; color:#fff;}
+.btn-transparent:hover, .btn-transparent:focus{border-color:#fff; background: #fff;}
