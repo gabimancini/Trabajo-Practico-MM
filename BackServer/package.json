@@ -1,0 +1,18 @@
+{
+  "name": "backserver",
+  "version": "1.0.0",
+  "description": "Proyecto para el curso de programacion Web de Mariano Moreno.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriela Mancini - Marcos Villabasa - Luciano Paulon",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.9"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
