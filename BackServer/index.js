@@ -1,18 +1,21 @@
 // Requires
-let express = require('express');
-let mongoose = require('mongoose');
+const express = require('express');
+const mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+
 
 
 // Iniciar express
 var app = express();
 
-//rutas
-app.get('/', (req, res, next)=>{
-  res.status(200).json({
-    ok: true,
-    mensaje: 'Peticion realizada correctamente'
-  });
-});
+//importar rutas
+var rutaBaseApp = require('./Rutas/rutaBase.js');
+var usuarioRuta = require('./Rutas/usuario');
+
+
+//usar rutas
+app.use('/usuario', usuarioRuta);
+app.use('/',rutaBaseApp);
 
 
 // conexion a la BD
