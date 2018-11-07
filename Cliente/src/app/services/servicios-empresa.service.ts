@@ -16,7 +16,7 @@ export class ServiciosEmpresaService {
       img: "../../../assets/img/logistica.jpg"
     }, 
     {
-       title: "Logística Integral",
+       title: "Gestión de Stock",
       description:  "Al elegirnos,cuenta con una organización  en la gestión de inventarios, almacenes en las localidades más importantes del país. ",
       img: "../../../assets/img/stock.jpg"
     } 
