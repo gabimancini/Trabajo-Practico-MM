@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 
 let rolesValidos = {
   values: ['ADMIN_ROLE', 'EMPLEADO_ROLE', 'EMPLEADOR_ROLE'],
-  messge: '{VALUE} no es un rol valido'
+  message: '{VALUE} no es un rol valido'
 };
 
 let usuarioSchema = new Schema({
