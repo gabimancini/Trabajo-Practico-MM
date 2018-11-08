@@ -1,14 +1,19 @@
+'use strict'
+
 // importamos express
-var express = require('express');
+const express = require('express');
 
 //importamos el controlador
-var usuarioController = require('../Controladores/usuario');
+var UsuarioController = require('../Controladores/usuario.js');
 
 //modulo Router de Express
-var router = express.Router();
+const app = express.Router();
 
 //Rutas de usuario
-router.get('/', usuarioController.obtenerUsuarios);
+
+app.get('/getUsuarios', UsuarioController.obtenerUsuarios);
+app.post('/registroUsuario', UsuarioController.crearUsuario);
+
 
 //exportamos el Router
-module.exports = router;
+module.exports = app;
