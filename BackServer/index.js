@@ -6,11 +6,16 @@ var bodyParser = require('body-parser');
 
 
 // Iniciar express
-var app = express();
+const app = express();
+
+//body-parser  x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+// parse application/json
+app.use(bodyParser.json());
 
 //importar rutas
 var rutaBaseApp = require('./Rutas/rutaBase.js');
-var usuarioRuta = require('./Rutas/usuario');
+var usuarioRuta = require('./Rutas/usuario.js');
 
 
 //usar rutas
