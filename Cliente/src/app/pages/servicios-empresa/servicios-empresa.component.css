@@ -20,64 +20,10 @@
 	display: inline-block;
 }
 .quick-services h2{
-	font-size: 25px;
-	color: #9c3333;
+	font-size: 25px; 
 }
 .quick-services p{
 	padding:0 40px;
 }
-.quick-services a{
-	color: #232323;
-    font-family: "Merriweather",serif;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.quick-services .secondary-content h2{
-    font-size: 26px;
-    margin-top: 45px;
-    text-transform: uppercase;
-}
-.quick-services .secondary-content small{
-    display: block;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 22px;
-    margin-bottom: 30px;
-    margin-top: 7px;
-    padding: 0 20%;
-    text-transform: none;
-}
-.quick-services .secondary-content ul{
-    padding:0;
-    list-style:none;
-}
-.quick-services .secondary-content ul li{
-    float: left;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    padding-left: 35px;
-    position: relative;
-    width: 100%;
-}
-.quick-services .secondary-content ul li:before{
-	content:"\f058";
-	font-family: FontAwesome;
-	color: #00D36C;
-	font-size: 25px;
-    left: 0;
-    position: absolute;
-    top: -7px;
-
-}
-
-.quick-services .secondary-content blockquote{
-    font-size:14px;
-    padding:0 0 0 50px;
-    line-height:27px;
-}
-
-.quick-services .secondary-content blockquote p{
-	padding: 0;
-}
+ 
+ 
