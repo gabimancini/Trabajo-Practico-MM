@@ -2,13 +2,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { ServiciosEmpresaComponent } from './pages/servicios-empresa/servicios-empresa.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { ServiciosEmpresaComponent } from './components/pages/servicios-empresa/servicios-empresa.component';
+import { ContactoComponent } from './components/pages/contacto/contacto.component';
+import { HomeComponent } from './components/pages/home/home.component';
 
 //Services
 import  { ServiciosEmpresaService  } from './services/servicios-empresa.service';
-import { ContactoComponent } from './pages/contacto/contacto.component';
+
+//Rutas
+import { RoutingModule } from './routing/routing.module';
+
 
 
 @NgModule({
@@ -17,10 +22,12 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     HeaderComponent,
     FooterComponent,
     ServiciosEmpresaComponent,
-    ContactoComponent
+    ContactoComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RoutingModule
   ],
   providers: [ServiciosEmpresaService ],
   bootstrap: [AppComponent]
