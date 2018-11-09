@@ -8,6 +8,7 @@ import { ServiciosEmpresaComponent } from './pages/servicios-empresa/servicios-e
 
 //Services
 import  { ServiciosEmpresaService  } from './services/servicios-empresa.service';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import  { ServiciosEmpresaService  } from './services/servicios-empresa.service'
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ServiciosEmpresaComponent
+    ServiciosEmpresaComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule
