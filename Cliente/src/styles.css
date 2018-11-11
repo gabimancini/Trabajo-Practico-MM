@@ -7,9 +7,9 @@ body{
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Merriweather', serif;
 }
-
-.btn{border-radius: 50px}
-.btn-default{background:#2E64FE; border-color:#2E64FE; color:#fff;}
+h2, h3{color: #9c3333;}
+.btn{border-radius: 50px;}
+.btn-default{background:#9c3333; border-color:#2E64FE; color:#fff;}
 .btn-default:hover, .btn-default:focus{background:#00964d; color:#fff; border-color:#00964d }
 .btn-transparent{border:2px solid #fff; color:#fff;}
 .btn-transparent:hover, .btn-transparent:focus{border-color:#fff; background: #fff;}
