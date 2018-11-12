@@ -35,3 +35,8 @@
 	margin-top: 20px;
 	border: 4px solid gray;
 }
+.btn-default:hover{
+    background-color: transparent;
+    color: #9c3333;
+    border:1px solid #9c3333;
+}
