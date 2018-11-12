@@ -11,10 +11,12 @@ let clienteSchema = new Schema ({
 })
 
 let ordenCargaSchema = new Schema({
-  codigo: {type: Number, required: [true, 'El codigo es necesario']},
+  codigo: {type: Number, required: true},
   fecha: {type: Date, required: true},
-  codLocalidadDesde: {type: Schema.Types.ObjectId, ref: 'Localidad' , required: true},
-  codLocalidadHasta: {type: Schema.Types.ObjectId, ref: 'Localidad'}, required: true,
+  dirLocalidadDesde: {type:String, required: true},
+  dirLocalidadHasta: {type: String, required: true},
+  descripcionCarga: {type:String, required:true},
+  peso:{type:Number, required:true},
   camion: {type: Schema.Types.ObjectId, ref: 'Camion', required: true},
   cliente: [clienteSchema]
 });
