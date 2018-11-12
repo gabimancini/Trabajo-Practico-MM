@@ -10,10 +10,12 @@ import { HomeComponent } from './components/pages/home/home.component';
 
 //Services
 import  { ServiciosEmpresaService  } from './services/servicios-empresa.service';
+import { LoginEmpleadoComponent } from './components/pages/login-empleado/login-empleado.component';
 
 //Rutas
 import { RoutingModule } from './routing/routing.module';
 
+ 
 
 
 @NgModule({
@@ -23,8 +25,9 @@ import { RoutingModule } from './routing/routing.module';
     FooterComponent,
     ServiciosEmpresaComponent,
     ContactoComponent,
-    HomeComponent
-  ],
+    HomeComponent,
+    LoginEmpleadoComponent
+   ],
   imports: [
     BrowserModule,
     RoutingModule
