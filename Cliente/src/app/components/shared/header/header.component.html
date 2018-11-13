@@ -1,4 +1,4 @@
-<section class="intro">
+<section class="intro" [ngStyle]="{'background-image': 'url(' + image + ')'}"  [ngStyle]="{'height': 'height'}">
 <div class="container-fluid">
 	<nav class="navbar navbar-transparent" data-spy="affix" data-offset-top="60">
       <div class="container">
@@ -13,18 +13,18 @@
           <!--	<img src="../../../assets/img/logo.png"/>-->
           </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar-collapse collapse"  *ngIf="['/home']" >
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Servicios</a></li>
-            <li><a [routerLink]="['#contacto']">Contacto</a></li> 
+            <li *ngIf="showLinks" ><a href="#">Home</a></li>
+            <li *ngIf="showLinks" ><a href="#about">Servicios</a></li>
+            <li *ngIf="showLinks" ><a [routerLink]="['#contacto']">Contacto</a></li> 
           <li><a [routerLink]="['/loginEmpleado']" class="btn btn-default">Empleado</a></li>
            <li><a href="#" class="btn btn-default">Empleador</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <div class="banner-caption text-center">
+    <div *ngIf="showLinks" class="banner-caption text-center">
         	<h1>Rápido y Eficiente</h1>
         	<p>Si invertimos en centros logísticos, mejoramos la infraestructura y creamos un entorno facilitador.</p>
         	<div class="action-box"><a href="#" class="btn btn-transparent">Contactanos</a></div>
