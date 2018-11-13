@@ -13,6 +13,7 @@ const app = express.Router();
 
 app.get('/getUsuarios', UsuarioController.obtenerUsuarios);
 app.post('/registroUsuario', UsuarioController.crearUsuario);
+app.put('/:id', UsuarioController.actualizarUsuario);
 
 
 //exportamos el Router
