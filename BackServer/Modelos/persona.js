@@ -1,4 +1,7 @@
 let mongoose = require('mongoose');
+let uniqueValidator = require('mongoose-unique-validator');
+let autoIncremento = require('mongoose-auto-increment');
+
 let Schema = mongoose.Schema;
 
 let personaSchema = new Schema ({
@@ -10,5 +13,8 @@ let personaSchema = new Schema ({
   usuario: {type: Schema.Types.ObjectId, ref:'Usuario', required: [true, 'El usuario es requerido']},
 
 });
+
+personaSchema.plugin(personaSchema);
+personaSchema.plugin(autoIncremento.plugin, {model:'Persona', field: 'legajo'})
 
 module.exports = mongoose.model('Persona', personaSchema);
