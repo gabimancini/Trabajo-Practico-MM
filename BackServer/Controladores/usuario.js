@@ -132,10 +132,39 @@ let actualizarUsuario = (req, res, next) => {
 
 }
 
+let borrarUsuarioId = (req, res)=>{
+
+  var id = req.params.id;
+
+  Usuario.findByIdAndRemove(id, (err, usuarioBorrado)=>{
+
+    if(err){
+        return res.status(500).json({
+          ok:false,
+          mensaje:'No existe usuario con ese Id'
+        });
+    }
+
+    if(!usuarioBorrado){
+      return res.status(400).json({
+        ok:false,
+        mensaje: 'No existe el usuario'
+      })
+    }
+
+    res.status(200).json({
+      ok:true,
+      usuario: usuarioBorrado
+    })
+  });
+};
+
+
 
 
 module.exports = {
   obtenerUsuarios,
   crearUsuario,
-  actualizarUsuario
+  actualizarUsuario,
+  borrarUsuarioId
 }

@@ -14,6 +14,7 @@ const app = express.Router();
 app.get('/getUsuarios', UsuarioController.obtenerUsuarios);
 app.post('/registroUsuario', UsuarioController.crearUsuario);
 app.put('/:id', UsuarioController.actualizarUsuario);
+app.delete('/:id', UsuarioController.borrarUsuarioId);
 
 
 //exportamos el Router
