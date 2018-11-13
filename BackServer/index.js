@@ -16,9 +16,11 @@ app.use(bodyParser.json());
 //importar rutas
 var rutaBaseApp = require('./Rutas/rutaBase.js');
 var usuarioRuta = require('./Rutas/usuario.js');
+var camionRuta = require('./Rutas/camion.js')
 
 
 //usar rutas
+app.use('/camion', camionRuta);
 app.use('/usuario', usuarioRuta);
 app.use('/',rutaBaseApp);
 
