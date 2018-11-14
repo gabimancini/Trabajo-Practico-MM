@@ -1,0 +1,11 @@
+ .empleado-container{
+    height: 80vh;
+ }
+ .form-container{
+ 	margin-top: 50px;
+ }
+.btn-default:hover{
+    background-color: transparent;
+    color: #9c3333;
+    border:1px solid #9c3333;
+}
