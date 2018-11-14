@@ -132,6 +132,13 @@ h2, h3{color: #9c3333;}
   font-size: 15px;
   margin:0 10px;
 }
+
+/* Form */
+ .form-container{
+ 	margin-top: 50px;
+ 	margin-bottom: 50px;
+ }
+
 /*---------- Responsive Model ----------*/
 
 @media(max-width: 1024px) { 
