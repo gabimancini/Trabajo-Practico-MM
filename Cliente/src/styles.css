@@ -134,10 +134,7 @@ h2, h3{color: #9c3333;}
 }
 /*---------- Responsive Model ----------*/
 
-@media(max-width: 1024px) {
-    .intro{
-        height:100vh;
-    }
+@media(max-width: 1024px) { 
     .intro .navbar-toggle{
         border: 2px solid #9c3333;
     }
