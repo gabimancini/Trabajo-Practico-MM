@@ -11,9 +11,9 @@ const app = express.Router()
 
 //Rutas para Camion
 app.get('/getCamiones', CamionController.obtenerCamiones);
-app.post('/registroCamion', CamionController.crearCamion);
-app.put('/:id', CamionController.actualizarCamion);
-app.delete('/:id', CamionController.borrarCamion);
+ app.post('/registroCamion', CamionController.crearCamion);
+// app.put('/:id', CamionController.actualizarCamion);
+// app.delete('/:id', CamionController.borrarCamion);
 
 
 //exportamos el Router
