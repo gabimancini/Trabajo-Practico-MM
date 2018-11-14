@@ -33,7 +33,7 @@ let crearPersona = (req, res) => {
       apellido: body.apellido,
       legajo: body.legajo,
       rol: body.rol,
-      usuario:  body.usuario
+      Persona:  body.Persona
     }
   );
 
@@ -83,7 +83,7 @@ let actualizarPersona = (req, res, next) => {
     persona.apellido = body.apellido;
     persona.legajo=body.legajo;
     persona.rol=body.rol;
-    persona.usuario=body.usuario;
+    persona.Persona=body.Persona;
 
     persona.save((err,personaGuardado)=>{
       if(err){
@@ -104,10 +104,38 @@ let actualizarPersona = (req, res, next) => {
 
 }
 
+let borrarPersonaId = (req, res)=>{
+
+  var id = req.params.id;
+
+  Persona.findByIdAndRemove(id, (err, PersonaBorrado)=>{
+
+    if(err){
+        return res.status(500).json({
+          ok:false,
+          mensaje:'No existe Persona con ese Id'
+        });
+    }
+
+    if(!PersonaBorrado){
+      return res.status(400).json({
+        ok:false,
+        mensaje: 'No existe el Persona'
+      })
+    }
+
+    res.status(200).json({
+      ok:true,
+      Persona: PersonaBorrado
+    })
+  });
+};
+
 
 
 module.exports = {
   obtenerPersonas,
   crearPersona,
-  actualizarPersona
+  actualizarPersona,
+  borrarPersonaId
 }
