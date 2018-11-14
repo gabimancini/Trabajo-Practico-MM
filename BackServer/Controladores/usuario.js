@@ -2,12 +2,13 @@
 var  Usuario = require('../Modelos/usuario.js');
 var bcrypt = require('bcryptjs');
 
-
+// Importamos servicio de JWT
+var jwt = require('../servicios/jwt');
 
 //-----Obtener usuarios-----
 let obtenerUsuarios = (req, res) => {
 
-    Usuario.find({}, 'nombre email', (err, usuarios) => {
+    Usuario.find({}, 'nombre email password', (err, usuarios) => {
 
       if (err) {
   			return res.status(500).json({
@@ -55,7 +56,8 @@ let crearUsuario = (req, res) => {
     }
     res.status(200).json({
       ok: true,
-      usuario: usuarioGuardado
+      usuario: usuarioGuardado,
+      usuarioToken: req.usuario
     })
   });
 
@@ -86,6 +88,48 @@ let crearUsuario = (req, res) => {
   //   })
   // })
 }
+
+//-------Login de usuario ---------------
+
+// let login = (req, res) => {
+//   let body = req.body;
+//
+//   let email = body.email;
+//   let password = body.password;
+//
+//   Usuario.findOne({email: email.toLowerCase()})
+//     .then( (usuarioEncontrado) => {
+//         if (!usuarioEncontrado) {
+//           return res.status(400).json({
+//             ok:false,
+//             mensaje: 'No existe el usuario'
+//           });
+//         }
+//
+//         bcrypt.compare(password,usuarioEncontrado.password)
+//         .then((passOk)=>{
+//           if(passOk){
+//             // Si salió todo bien, enviamos el JWT del usuario, que le permitirá loguearse
+//             return res.status(200).json({
+//               ok:true,
+//               usuarioEncontrado: usuarioEncontrado,
+//               token: jwt.createToken(usuarioEncontrado)
+//             });
+//
+//
+//           }else{
+//             // Sinó, la contraseña no es correcta
+//             return res.status(400).json({
+//               ok:false,
+//               mensaje: 'Contraseña incorrecta'
+//             });
+//
+//           }
+//         })
+//
+//
+//     })
+// }
 
 // -------Actualizar usuario ---------
 let actualizarUsuario = (req, res, next) => {
