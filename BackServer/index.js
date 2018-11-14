@@ -16,13 +16,18 @@ app.use(bodyParser.json());
 //importar rutas
 var rutaBaseApp = require('./Rutas/rutaBase.js');
 var usuarioRuta = require('./Rutas/usuario.js');
-var camionRuta = require('./Rutas/camion.js')
+var camionRuta = require('./Rutas/camion.js');
+var personaRuta = require('./Rutas/persona.js');
+var loginRuta = require('./Rutas/login.js');
 
 
 //usar rutas
+app.use('/login', loginRuta);
+app.use('/persona', personaRuta);
 app.use('/camion', camionRuta);
 app.use('/usuario', usuarioRuta);
 app.use('/',rutaBaseApp);
+
 
 
 // conexion a la BD
