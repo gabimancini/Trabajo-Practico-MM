@@ -17,7 +17,7 @@ const app = express.Router();
 app.get('/getPersonas', PersonaController.obtenerPersonas);
 app.post('/registroPersona',md_auth, PersonaController.crearPersona);
 app.put('/:id',md_auth, PersonaController.actualizarPersona);
-// app.delete('/:id', UsuarioController.borrarUsuarioId);
+app.delete('/:id',md_auth, PersonaController.borrarPersonaId);
 
 
 //exportamos el Router
