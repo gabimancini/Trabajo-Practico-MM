@@ -1,4 +1,4 @@
-<section class="intro" [ngStyle]="{'background-image': 'url(' + image + ')'}"  [ngStyle]="{'height': 'height'}">
+<section class="intro" [ngStyle]="{'background-image': 'url(' + image + ')', 'height': introHeight, 'background-color': introBefore }"  >
 <div class="container-fluid">
 	<nav class="navbar navbar-transparent" data-spy="affix" data-offset-top="60">
       <div class="container">
@@ -17,7 +17,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li *ngIf="showLinks" ><a href="#">Home</a></li>
             <li *ngIf="showLinks" ><a href="#about">Servicios</a></li>
-            <li *ngIf="showLinks" ><a [routerLink]="['#contacto']">Contacto</a></li> 
+            <li *ngIf="showLinks" ><a (click)="goToAnchor('contacto')">Contacto</a></li> 
           <li><a [routerLink]="['/loginEmpleado']" class="btn btn-default">Empleado</a></li>
            <li><a href="#" class="btn btn-default">Empleador</a></li>
           </ul>
