@@ -4,13 +4,13 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-login-empleado',
   templateUrl: './login-empleado.component.html',
-  styleUrls: ['./login-empleado.component.css']
+  styleUrls: ['./login-empleado.component.css'] 
 })
 export class LoginEmpleadoComponent {
 
 	empleado: Object = {
-		usuario : "",
-		clave : ""
+		usuario : null,
+		clave : null
 	}
 	 
   constructor() { }
