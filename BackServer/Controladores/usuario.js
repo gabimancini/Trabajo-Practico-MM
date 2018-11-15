@@ -2,8 +2,6 @@
 var  Usuario = require('../Modelos/usuario.js');
 var bcrypt = require('bcryptjs');
 
-// Importamos servicio de JWT
-var jwt = require('../servicios/jwt');
 
 //-----Obtener usuarios-----
 let obtenerUsuarios = (req, res) => {
