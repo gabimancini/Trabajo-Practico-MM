@@ -9,10 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeaderComponent implements OnInit {
 @Input() showLinks  = true;
 @Input() image = "../../../assets/img/intro-banner.jpg";  
-@Input() height:string= "80vh;";
-  constructor() {
+@Input() introHeight:string = "80vh";  
   
-   }
+    constructor() { }
 
   ngOnInit() {
   }
