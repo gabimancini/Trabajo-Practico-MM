@@ -19,9 +19,11 @@ var usuarioRuta = require('./Rutas/usuario.js');
 var camionRuta = require('./Rutas/camion.js');
 var personaRuta = require('./Rutas/persona.js');
 var loginRuta = require('./Rutas/login.js');
+var clienteRuta = require('./Rutas/cliente.js');
 
 
 //usar rutas
+app.use('/cliente',clienteRuta);
 app.use('/login', loginRuta);
 app.use('/persona', personaRuta);
 app.use('/camion', camionRuta);
