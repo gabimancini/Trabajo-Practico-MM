@@ -75,10 +75,9 @@ let actualizarCliente = (req, res) => {
       });
     }
 
-    cliente.capacidad=body.capacidad;
-    cliente.modelo=body.modelo;
-    cliente.legajo=body.legajo;
-    cliente.marca=body.marca;
+    cliente.razonSocial=body.razonSocial;
+    cliente.cuit=body.cuit;
+    cliente.descripcion=body.descripcion;
 
     cliente.save((err,clienteGuardado) => {
       if(err){
