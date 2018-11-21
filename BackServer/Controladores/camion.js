@@ -55,6 +55,51 @@ let crearCamion = (req, res)=>{
   });
 }
 
+//------Actualizar camion ------------
+let actualizarCamion = (req, res) => {
+  var body = req.body;
+  var id = req.params.id;
+
+  Camion.findById(id, (err, camion) =>{
+
+    if (err) {
+      return res.status(500).json({
+        ok:false,
+        mensaje:'Error al buscar Camion en la DB',
+        errors: err
+      });
+    }
+    if(!camion){
+      return res.status(400).json({
+        ok:false,
+        mensaje:'El camion no existe',
+        errors: {message: 'no existe el camion con ese id'}
+      });
+    }
+
+    camion.capacidad=body.capacidad;
+    camion.modelo=body.modelo;
+    camion.legajo=body.legajo;
+    camion.marca=body.marca;
+
+    camion.save((err,camionGuardado) => {
+      if(err){
+        return res.status(400).json({
+          ok:false,
+          mensaje:'Error al guardar nuevo camion en la DB',
+          errors: err
+        });
+      }
+      res.status(200).json({
+        ok:true,
+        camion:camionGuardado
+      });
+    });
+
+  });
+
+}
+
 /*
 crearOrder = (req,res) => {
   let orden = Order.create();
