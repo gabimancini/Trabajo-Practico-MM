@@ -10,7 +10,7 @@ let login = (req, res) => {
 
   var body = req.body;
 
-  Usuario.findOne({email: body.email} , (err, usuarioDB) => {
+  Usuario.findOne({legajo: body.legajo} , (err, usuarioDB) => {
 
     if (err) {
       return res.status(500).json({
@@ -23,7 +23,7 @@ let login = (req, res) => {
     if (!usuarioDB) {
       return res.status(500).json({
         ok: false,
-        mensaje: "Credenciales incorrectas - email",
+        mensaje: "Credenciales incorrectas - legajo",
         errors: err
       });
     }
@@ -43,7 +43,7 @@ let login = (req, res) => {
     res.status(200).json({
       ok:true,
       usuario: usuarioDB,
-      token:token, 
+      token:token,
       id: usuarioDB._id
     });
 
