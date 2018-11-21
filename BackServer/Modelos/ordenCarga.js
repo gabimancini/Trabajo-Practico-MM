@@ -4,16 +4,6 @@ let autoIncremento = require('mongoose-auto-increment');
 
 let Schema = mongoose.Schema;
 
-let clienteSchema = new Schema ({
-  codigoCliente:{type:Number, required:true, unique:true},
-  razonSocial: {type:String, required:true},
-  cuit: {type:Number, required:true},
-  descripcion:{type:String}
-});
-
-clienteSchema.plugin(uniqueValidator);
-clienteSchema.plugin(autoIncremento.plugin, {model: 'Cliente', field:'codigoCliente'});
-
 let ordenCargaSchema = new Schema({
   codigoOrden: {type: Number, unique:true, required: true},
   fecha: {type: Date, required: true, default: Date.now},
@@ -22,10 +12,10 @@ let ordenCargaSchema = new Schema({
   descripcionCarga: {type:String, required:true},
   peso:{type:Number, required:true},
   camion: {type: Schema.Types.ObjectId, ref: 'Camion', required: true},
-  cliente: [clienteSchema]
+  cliente: {type: Schema.Types.ObjectId, ref: 'Cliente', required: [true, 'El camion tiene que tener un responsable']}
 });
 
 ordenCargaSchema.plugin(uniqueValidator);
 ordenCargaSchema.plugin(autoIncremento.plugin, {model:'OrdenCarga', field:'codigoOrden'});
 
-moduel.exports = mongoose.model ('ordenCarga', ordenCargaSchema);
+module.exports = mongoose.model ('ordenCarga', ordenCargaSchema);
