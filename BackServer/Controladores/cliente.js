@@ -141,7 +141,7 @@ crearOrder = (req,res) => {
 }
 */
 module.exports = {
-  obtenerClientees,
+  obtenerClientes,
   crearCliente,
   actualizarCliente,
   borrarClienteId
