@@ -24,7 +24,10 @@ let obtenerCamiones = (req, res)=>{
   });
 };
 
+// --------Crear Camion ------------
+
 let crearCamion = (req, res)=>{
+
   var body = req.body;
 
   var camionNuevo = new Camion({
@@ -32,8 +35,7 @@ let crearCamion = (req, res)=>{
     capacidad: body.capacidad,
     modelo: body.modelo,
     legajo: body.legajo,
-    nombre: body.nombre,
-    descripcion: body.descripcion
+    marca: body.marca
   });
 
   camionNuevo.save( (err, camionGuardado) =>{
@@ -50,11 +52,24 @@ let crearCamion = (req, res)=>{
       camion: camionGuardado
     })
 
-
   });
 }
 
+/*
+crearOrder = (req,res) => {
+  let orden = Order.create();
+  orden.usuario =req.body.usua;
+  orden.clientes.push("id132131","1232323");
+  orden.save();
+ let ordenADevolver = orden;
+ ordenADevolver.usuarios = [];
+  orden.clientes.map((cliente)=> {
+    cliente = Cliente.find(cliente);
+    ordenADevolver.clientes.push(cliente)
 
+  })
+}
+*/
 module.exports = {
   obtenerCamiones,
   crearCamion
