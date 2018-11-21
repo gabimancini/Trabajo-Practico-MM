@@ -6,7 +6,7 @@ var bcrypt = require('bcryptjs');
 //-----Obtener usuarios-----
 let obtenerUsuarios = (req, res) => {
 
-    Usuario.find({}, 'nombre email password', (err, usuarios) => {
+    Usuario.find({}, 'legajo rol password', (err, usuarios) => {
 
       if (err) {
   			return res.status(500).json({
@@ -36,10 +36,8 @@ let crearUsuario = (req, res) => {
   // })
   var usuarioNuevo = new Usuario(
     {
-      nombre: body.nombre,
-      email: body.email,
+      legajo: body.legajo,
       password: body.password,
-      img: body.img,
       rol: body.rol
     }
   ); // creamos el nuevo obj
