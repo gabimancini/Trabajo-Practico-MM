@@ -196,3 +196,14 @@ h2, h3{color: #9c3333;}
    
 }
 
+
+/* **** Sign in google **** */
+.abcRioButtonBlue {
+    color:gray !important;
+    background-color: transparent !important;
+    border: none; 
+    border-radius:10px;
+    width:100% !important;
+    margin-top: 20px;
+}
+
