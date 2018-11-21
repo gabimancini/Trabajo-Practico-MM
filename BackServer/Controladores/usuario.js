@@ -149,8 +149,7 @@ let actualizarUsuario = (req, res, next) => {
       });
     }
 
-    usuario.nombre = body.nombre;
-    usuario.email=body.email;
+    usuario.password = body.password;
     usuario.rol=body.rol;
 
     usuario.save((err,usuarioGuardado)=>{
