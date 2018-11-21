@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { InterfazUsuario } from '../../interfaces/usuario.interface';
+import { HttpClientModule }    from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -95,9 +95,9 @@ get chequearSiUserEstaLogueado(usuario: InterfazUsuario){
 */
 }
 
-// export interface serviciosEmpresa{
-// 	  title: string,
-//       description:  string,
-//       img: string
-//
-// }
+export interface serviciosEmpresa{
+	  title: string,
+      description:  string,
+      img: string
+
+}

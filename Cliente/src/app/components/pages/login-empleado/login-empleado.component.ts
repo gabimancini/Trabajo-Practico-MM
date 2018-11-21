@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class LoginEmpleadoComponent {
 
 	empleado: Object = {
-		usuario : null,
+		email : null,
 		clave : null
 	}
 	 
@@ -20,6 +20,6 @@ export class LoginEmpleadoComponent {
   	console.log(forma);
   	console.log(forma.value);
   }
-	}
+}
 
 
