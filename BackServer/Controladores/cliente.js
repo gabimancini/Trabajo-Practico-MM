@@ -31,11 +31,9 @@ let crearCliente = (req, res)=>{
   var body = req.body;
 
   var clienteNuevo = new Cliente({
-    patente: body.patente,
-    capacidad: body.capacidad,
-    modelo: body.modelo,
-    legajo: body.legajo,
-    marca: body.marca
+    razonSocial: body.razonSocial,
+    cuit: body.cuit,
+    descripcion: body.descripcion,
   });
 
   clienteNuevo.save( (err, clienteGuardado) =>{
