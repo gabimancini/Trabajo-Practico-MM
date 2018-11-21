@@ -20,9 +20,11 @@ var camionRuta = require('./Rutas/camion.js');
 var personaRuta = require('./Rutas/persona.js');
 var loginRuta = require('./Rutas/login.js');
 var clienteRuta = require('./Rutas/cliente.js');
+var ordenRuta = require('./Rutas/ordenCarga.js');
 
 
 //usar rutas
+app.use('/orden', ordenRuta);
 app.use('/cliente',clienteRuta);
 app.use('/login', loginRuta);
 app.use('/persona', personaRuta);
