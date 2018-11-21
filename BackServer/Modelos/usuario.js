@@ -10,10 +10,8 @@ let rolesValidos = {
 
 let usuarioSchema = new Schema({
 
-  nombre: { type: String, required: [true, 'El nombre es necesario']},
-  email: {type: String, unique: true, required: [true, 'El correo es necesario'] },
+  legajo: { type: Number, unique: true, required: [true, 'El legajo es necesario']},
   password: {type: String, required: [true, 'El password es necesario'] },
-  img: {type: String, required:false},
   rol: {type: String, required: true, enum: rolesValidos }
 });
 
