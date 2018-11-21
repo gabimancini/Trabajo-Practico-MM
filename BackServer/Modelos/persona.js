@@ -12,10 +12,10 @@ autoIncremento.initialize(connection);
 let personaSchema = new Schema ({
   nombre: { type: String, required: [true, 'El nombre es necesario']},
   apellido: { type: String, required: [true, 'El apellido es necesario']},
-  legajo: { type: Number, unique: true, required: [true, 'El legajo es necesario']},
-  rol: {type: String, required: true},
+  tipoDoc: {type: String, required:true},
+  nroDoc: {type: Number, required:true},
   img: {type: String, required: false},
-  usuario: {type: Schema.Types.ObjectId, ref:'Usuario', required: [true, 'El usuario es requerido']},
+  legUsuario: {type: Schema.Types.ObjectId, ref:'Usuario', required: [true, 'El usuario es requerido']},
 
 });
 
