@@ -100,14 +100,42 @@ let actualizarCamion = (req, res) => {
 
 }
 
+//---------Borrar Camion----------
+let borrarCamionId = (req, res)=>{
+
+  var id = req.params.id;
+
+  Camion.findByIdAndRemove(id, (err, camionBorrado)=>{
+
+    if(err){
+        return res.status(500).json({
+          ok:false,
+          mensaje:'No existe camion con ese Id'
+        });
+    }
+
+    if(!camionBorrado){
+      return res.status(400).json({
+        ok:false,
+        mensaje: 'No existe el camion'
+      })
+    }
+
+    res.status(200).json({
+      ok:true,
+      camion: camionBorrado
+    })
+  });
+};
+
 /*
 crearOrder = (req,res) => {
   let orden = Order.create();
-  orden.usuario =req.body.usua;
+  orden.camion =req.body.usua;
   orden.clientes.push("id132131","1232323");
   orden.save();
  let ordenADevolver = orden;
- ordenADevolver.usuarios = [];
+ ordenADevolver.camions = [];
   orden.clientes.map((cliente)=> {
     cliente = Cliente.find(cliente);
     ordenADevolver.clientes.push(cliente)
@@ -117,5 +145,7 @@ crearOrder = (req,res) => {
 */
 module.exports = {
   obtenerCamiones,
-  crearCamion
+  crearCamion,
+  actualizarCamion,
+  borrarCamionId
 }
