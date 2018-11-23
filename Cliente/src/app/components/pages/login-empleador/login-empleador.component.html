@@ -12,14 +12,14 @@
 			    	<form accept-charset="UTF-8" role="form" (ngSubmit)="enviar(forma)" #forma = "ngForm">
 	                    <fieldset>
 				    	  	<div class="form-group" [ngClass] = "{'alert-danger': clave.errors?.required}">
-				    		    <input type="text" 
+				    		    <input type="email" 
 				    		    class="form-control"
-				    		    id="usuario" 
-				    		    name="usuario" 
-				    		    [(ngModel)]="empleador.usuario" 
-				    		    placeholder="Usuario" 
+				    		    id="email" 
+				    		    name="email" 
+				    		    [(ngModel)]="empleador.email" 
+				    		    placeholder="Email" 
 				    		    required 
-				    		    #usuario = "ngModel"
+				    		    #email = "ngModel"
 				    		    >
 				    		</div>
 				    		<div class="alert alert-danger" role="alert" *ngIf="usuario.errors?.required">
