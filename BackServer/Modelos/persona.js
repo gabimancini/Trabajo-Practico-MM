@@ -14,8 +14,8 @@ let personaSchema = new Schema ({
   apellido: { type: String, required: [true, 'El apellido es necesario']},
   tipoDoc: {type: String, required:true},
   nroDoc: {type: Number, required:true},
+  legajo: { type: Number, unique: true, required: [true, 'El legajo es necesario']},
   img: {type: String, required: false},
-  legUsuario: {type: Schema.Types.ObjectId, ref:'Usuario', required: [true, 'El usuario es requerido']},
 
 });
 
