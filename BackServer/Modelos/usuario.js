@@ -10,11 +10,12 @@ let rolesValidos = {
 
 let usuarioSchema = new Schema({
 
-  legajo: { type: Number, unique: true, required: [true, 'El legajo es necesario']},
+  email: {type:String, unique:true, required:[true, 'El correo es necesario']},
+  
   password: {type: String, required: [true, 'El password es necesario'] },
   rol: {type: String, required: true, enum: rolesValidos }
 });
 
-usuarioSchema.plugin(uniqueValidator, { message: 'El correo debe ser unico'});
+usuarioSchema.plugin(uniqueValidator, { message: 'El legajo debe ser unico'});
 
 module.exports = mongoose.model('Usuario', usuarioSchema );
