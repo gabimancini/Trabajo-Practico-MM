@@ -6,7 +6,7 @@ var bcrypt = require('bcryptjs');
 //-----Obtener usuarios-----
 let obtenerUsuarios = (req, res) => {
 
-    Usuario.find({}, 'legajo rol password', (err, usuarios) => {
+    Usuario.find({}, 'email rol password', (err, usuarios) => {
 
       if (err) {
   			return res.status(500).json({
@@ -36,7 +36,7 @@ let crearUsuario = (req, res) => {
   // })
   var usuarioNuevo = new Usuario(
     {
-      legajo: body.legajo,
+      email: body.email,
       password: body.password,
       rol: body.rol
     }
