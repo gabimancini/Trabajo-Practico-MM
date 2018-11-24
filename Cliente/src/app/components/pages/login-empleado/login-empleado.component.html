@@ -6,7 +6,7 @@
 			<h2 align="center">Login Empleado</h2>
     		<div class="panel panel-default form-box">
 			  	<div class="panel-heading">
-			    	<h4 class="panel-title">Ingresa usuario y contraseña</h4>
+			    	<h4 class="panel-title">Ingresa email y contraseña</h4>
 			 	</div>
 			  	<div class="panel-body">
 			    	<form  accept-charset="UTF-8" role="form" (ngSubmit)="enviar(forma)" #forma = "ngForm">
@@ -43,14 +43,34 @@
 				    	    		<input name="remember" type="checkbox" value="Remember Me"> Recordarme
 				    	    	</label>
 				    	    </div>
+				    	    
+
 				    		<button type="submit" 
 				    		class="btn btn-lg btn-default btn-block"
 				    		[disabled] = "!forma.valid"
 				    		>Login</button>
 				    	</fieldset>
+				    	
 			      	</form>
+			      	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 			    </div>
 			</div>
 		</div>
 	</div>
 </div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
