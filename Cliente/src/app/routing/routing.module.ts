@@ -8,12 +8,14 @@ import { ContactoComponent } from '../components/pages/contacto/contacto.compone
 import { HomeComponent } from '../components/pages/home/home.component';
 import { LoginEmpleadoComponent } from '../components/pages/login-empleado/login-empleado.component';
 import { LoginEmpleadorComponent } from '../components/pages/login-empleador/login-empleador.component';
+import { CargodatosComponent } from '../components/pages/cargodatos/cargodatos.component';
 
 const routes: Routes = [
 	{path: '', component: HomeComponent},
 	{path: 'home', component: HomeComponent},
 	{path: 'loginEmpleado', component: LoginEmpleadoComponent},
-	{path: 'loginEmpleador', component:LoginEmpleadorComponent}
+	{path: 'loginEmpleador', component:LoginEmpleadorComponent},
+	{path: 'cargoDatos', component:CargodatosComponent}
 ];
 
 @NgModule({

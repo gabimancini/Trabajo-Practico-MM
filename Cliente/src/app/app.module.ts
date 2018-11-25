@@ -10,6 +10,7 @@ import { ServiciosEmpresaComponent } from './components/pages/servicios-empresa/
 import { ContactoComponent } from './components/pages/contacto/contacto.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginEmpleadorComponent } from './components/pages/login-empleador/login-empleador.component';
+import { CargodatosComponent } from './components/pages/cargodatos/cargodatos.component';
 
 //Services
 import  { ServiciosEmpresaService  } from './services/servicios-empresa.service';
@@ -17,6 +18,7 @@ import { LoginEmpleadoComponent } from './components/pages/login-empleado/login-
 
 //Rutas
 import { RoutingModule } from './routing/routing.module';
+
  
  
 
@@ -30,7 +32,8 @@ import { RoutingModule } from './routing/routing.module';
     ContactoComponent,
     HomeComponent,
     LoginEmpleadoComponent,
-    LoginEmpleadorComponent
+    LoginEmpleadorComponent,
+    CargodatosComponent
     ],
   imports: [
     BrowserModule,
