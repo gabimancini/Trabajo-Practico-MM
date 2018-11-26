@@ -15,8 +15,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse"  *ngIf="['/home']" >
           <ul class="nav navbar-nav navbar-right">
-            <li *ngIf="showLinks" ><a href="#">Home</a></li>
-            <li *ngIf="showLinks" ><a href="#about">Servicios</a></li>
+            <li *ngIf="showLinks" ><a (click)="goToAnchor('home')">Home</a></li>
+            <li *ngIf="showLinks" ><a (click)="goToAnchor('servicios')">Servicios</a></li>
             <li *ngIf="showLinks" ><a (click)="goToAnchor('contacto')">Contacto</a></li> 
           <li><a [routerLink]="['/loginEmpleado']" class="btn btn-default">Empleado</a></li>
            <li><a [routerLink]="['/loginEmpleador']"class="btn btn-default">Empleador</a></li>

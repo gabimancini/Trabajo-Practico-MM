@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,9 +11,16 @@ export class HeaderComponent implements OnInit {
 @Input() image = "../../../assets/img/intro-banner.jpg";  
 @Input() introHeight:string = "80vh";  
   
-    constructor() { }
+    constructor(public viewPortScroller: ViewportScroller) {
+
+
+
+     }
 
   ngOnInit() {
-  }
 
+  }
+goToAnchor(anchor: string){
+   this.viewPortScroller.scrollToAnchor(anchor)
+}
 }
