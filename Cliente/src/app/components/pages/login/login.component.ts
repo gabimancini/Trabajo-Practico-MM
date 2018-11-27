@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
     this._usuarioService.login(usuario)
         .subscribe(resp => {
           console.log(resp);
+          this.router.navigate(['/home']); 
         });
   }
 
