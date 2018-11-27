@@ -3,6 +3,8 @@ import { Usuario } from '../../modelos/usuario.model';
 import { HttpClient } from '../../../../node_modules/@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 
+import { map, take } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +17,26 @@ export class UsuarioService {
   }
 
   crearUsuario(usuario: Usuario){
+
     let url = URL_SERVICIOS + 'usuario/registroUsuario';
 
-    return this.http.post(url,usuario); //retornamos un observador al cual nos vamos a poder subscribir
+    //retornamos un observador al cual nos vamos a poder subscribir
+    return this.http.post(url,usuario)
+        .pipe(
+          map( (resp:any) => {
+            console.log("usuario creado", resp);
+            return resp.usuario;
+          })
+        )
+
   }
+
+  login(usuario: Usuario){
+
+    let url = URL_SERVICIOS + 'login';
+
+    return this.http.post(url, usuario);
+  }
+
+
 }
