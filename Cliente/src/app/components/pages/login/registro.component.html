@@ -1,0 +1,118 @@
+<!-- <app-header [showLinks]="false" [image] = "false"  [introHeight] = "false" > </app-header> -->
+
+<div class="container empleado-container">
+    <div class="row">
+		<div class="col-md-4 col-md-offset-4 col-sm-10 col-sm-offset-1  form-container">
+			<h2 align="center">Login Empleado</h2>
+    		<div class="panel panel-default form-box">
+			  	<div class="panel-heading">
+			    	<h4 class="panel-title">Ingresa email y contraseña</h4>
+			 	</div>
+			  	<div class="panel-body">
+                <form ngNativeValidate action=""  [formGroup]="forma" (ngSubmit)="registrarUsuario()">
+
+                <div class="form-group m-t-20">
+                  <div class="col-xs-12">
+                    <input type="email" formControlName="email" name="email" class="form-control" id="" placeholder="Correo">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <input type="password" formControlName="clave" name="clave" class="form-control" id="" placeholder="Clave">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="col-xs-12">
+                    <input type="password" formControlName="clave2" name="clave2" class="form-control" id="" placeholder="Confirme clave">
+                  </div>
+                </div>
+
+                <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                  <p class="text-danger">
+                    Las contraseñas deben ser iguales
+                  </p>
+                </div>
+
+                <div class="form-group text-center m-t-20">
+                  <div class="col-xs-12">
+                    <button class="btn btn-lg btn-default btn-block" type="submit">Registrar</button>
+                  </div>
+                </div>
+
+
+
+
+                </form>
+
+
+
+
+
+			    	<!-- <form [formGroup]="forma" accept-charset="UTF-8" role="form" (ngSubmit)="enviar(forma)" #forma = "ngForm">
+	                    <fieldset>
+				    	  	<div class="form-group" [ngClass] = "{'alert-danger': clave.errors?.required}">
+				    		    <input formControlName="email"
+                    type="email"
+				    		    class="form-control"
+				    		    id="email"
+				    		    name="email"
+				    		    <!-- [(ngModel)]="empleado.email"
+				    		    placeholder="Email"
+				    		    required
+				    		    <!-- #email = "ngModel"
+				    		    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+				    		    >
+				    		</div>
+				    		<div class="alert alert-danger" role="alert" *ngIf="email.errors?.required">
+							  Email incorrecto
+							</div>
+				    		<div class="form-group">
+				    			<input formControlName="password"
+                  type="password"
+				    			class="form-control"
+				    			id="clave"
+                  name="password"
+				    			<!-- [(ngModel)]="empleado.clave"
+				    			placeholder="Clave"
+				    			required
+				    			<!-- #clave="ngModel">
+				    		</div>
+				    		<div class="alert alert-danger"  role="alert" *ngIf="clave.errors?.required">
+							  Clave incorrecta
+							</div>
+              <div class="form-group">
+                <input formControlName="password2"
+                type="password"
+                class="form-control"
+                id="clave"
+                name="password2"
+                <!-- [(ngModel)]="empleado.clave"
+                placeholder="Confirme Clave"
+                required
+                <!-- #clave="ngModel">
+              </div>
+              <div class="alert alert-danger"  role="alert" *ngIf="clave.errors?.required">
+              Clave incorrecta
+            </div>
+				    		<div class="checkbox">
+				    	    	<label>
+				    	    		<input name="remember" type="checkbox" value="Remember Me"> Recordarme
+				    	    	</label>
+				    	    </div>
+
+
+				    		<button type="submit"
+				    		class="btn btn-lg btn-default btn-block"
+				    		[disabled] = "!forma.valid"
+				    		>Registrar</button>
+				    	</fieldset>
+
+			      	</form> -->
+			      	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+			    </div>
+			</div>
+		</div>
+	</div>
+</div>
