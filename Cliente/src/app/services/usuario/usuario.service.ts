@@ -35,7 +35,16 @@ export class UsuarioService {
 
     let url = URL_SERVICIOS + 'login';
 
-    return this.http.post(url, usuario);
+    return this.http.post(url, usuario)
+    .pipe(
+      map( (resp:any) => {
+        localStorage.setItem('id',resp.id);
+        localStorage.setItem('token',resp.token);
+        localStorage.setItem('usuario', JSON.stringify(resp.usuario) );
+      })
+    )
+
+
   }
 
 
