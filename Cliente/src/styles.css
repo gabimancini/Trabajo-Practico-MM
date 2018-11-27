@@ -14,7 +14,10 @@ h2, h3{color: #9c3333;}
 .btn-default:hover, .btn-default:focus{background:#00964d; color:#fff; border-color:#00964d }
 .btn-transparent{border:2px solid #fff; color:#fff;}
 .btn-transparent:hover, .btn-transparent:focus{border-color:#fff; background: #fff;}
-
+.active > a{  
+  background-color: #000 !important;
+  border:1px solid #fff !important;
+}
 /*----Intro Section----*/
 .intro{
     /*float:left;*/
