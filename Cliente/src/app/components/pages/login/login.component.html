@@ -7,9 +7,9 @@
     		<div class="panel panel-default form-box">
 			  	<div class="panel-heading">
 			    	<h4 class="panel-title">Ingresa email y contraseña</h4>
-			 	</div>
+			 	  </div>
 			  	<div class="panel-body">
-			    	<form  accept-charset="UTF-8" role="form" (ngSubmit)="enviar(forma)" #forma = "ngForm">
+			    	<!-- <form  accept-charset="UTF-8" role="form" (ngSubmit)="enviar(forma)" #forma = "ngForm">
 	                    <fieldset>
 				    	  	<div class="form-group" [ngClass] = "{'alert-danger': clave.errors?.required}">
 				    		    <input type="email"
@@ -51,7 +51,33 @@
 				    		>Login</button>
 				    	</fieldset>
 
-			      	</form>
+			      	</form> -->
+
+              <form ngNativeValidate action=""  #forma="ngForm" (ngSubmit)="ingresar(forma)">
+
+              <div class="form-group m-t-20">
+                <div class="col-xs-12">
+                  <input ngModel type="email" required name="email" class="form-control"  placeholder="Correo del usuario">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-xs-12">
+                  <input ngModel type="password" required name="clave" class="form-control"  placeholder="Clave">
+                </div>
+              </div>
+
+
+              <div class="form-group text-center m-t-20">
+                <div class="col-xs-12">
+                  <button class="btn btn-lg btn-default btn-block" type="submit">Iniciar Sesion</button>
+                </div>
+              </div>
+
+
+
+
+              </form>
 			      	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 			    </div>
 			</div>
