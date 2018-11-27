@@ -138,6 +138,19 @@ h2, h3{color: #9c3333;}
  	margin-top: 50px;
  	margin-bottom: 50px;
  }
+ .form-container h2 span{
+  font-size: 24px;
+ }
+ .form-container .btn-default:hover{
+
+    background-color: transparent;
+    color: #9c3333;
+    border:1px solid #9c3333;
+}
+ .ng-invalid.ng-touched:not(form){
+    border:1px solid red;
+  }
+ 
 .form-box{
     background:#fff;
     padding:10px 20px 30px;
@@ -161,6 +174,7 @@ h2, h3{color: #9c3333;}
     margin-top:10px;
     font-size:14px;
 }
+
 /*---------- Responsive Model ----------*/
 
 @media(max-width: 1024px) { 
