@@ -10,5 +10,6 @@ var LoginController = require('../Controladores/login.js');
 const app = express.Router();
 
 app.post('/', LoginController.login);
+app.post('/google' , LoginController.loginGoogle);
 
 module.exports = app;
