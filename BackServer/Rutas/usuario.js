@@ -15,7 +15,7 @@ const app = express.Router();
 //Rutas de usuario
 
 app.get('/getUsuarios', UsuarioController.obtenerUsuarios);
-app.post('/registroUsuario', md_auth, UsuarioController.crearUsuario);
+app.post('/registroUsuario', UsuarioController.crearUsuario);
 app.put('/:id',md_auth, UsuarioController.actualizarUsuario);
 app.delete('/:id',md_auth, UsuarioController.borrarUsuarioId);
 
