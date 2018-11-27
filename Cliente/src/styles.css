@@ -46,6 +46,9 @@ h2, h3{color: #9c3333;}
 .navbar-nav{
     flex-direction: row;
 }
+.navbar-nav li a{
+    cursor:pointer;
+}  
 .navbar-transparent{
     margin:30px 0;
     text-transform:uppercase;
