@@ -7,13 +7,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [CommonModule, BrowserModule, RouterModule],
-  declarations: [
-   HeaderComponent,
-   FooterComponent
-  ],
-  exports: [
-    HeaderComponent,
-    FooterComponent
-  ],
+  declarations: [HeaderComponent, FooterComponent],
+  exports: [HeaderComponent, FooterComponent],
 })
 export class SharedComponentsModule {}

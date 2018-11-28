@@ -8,13 +8,13 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 
-//Módulos
+// Módulos
 import { PagesModule } from './components/pages/pages.module';
 
-//Services
+// Services
 import { ServiciosEmpresaService } from './services/servicios-empresa.service';
 
-//Rutas
+// Rutas
 import { RoutingModule } from './routing/routing.module';
 import { SharedComponentsModule } from './components/shared/components.module';
 
@@ -22,12 +22,7 @@ import { SharedComponentsModule } from './components/shared/components.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    RoutingModule,
-    PagesModule,
-    SharedComponentsModule
-  ],
+  imports: [BrowserModule, RoutingModule, PagesModule, SharedComponentsModule],
   providers: [ServiciosEmpresaService],
   bootstrap: [AppComponent],
 })

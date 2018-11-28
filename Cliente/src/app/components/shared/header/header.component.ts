@@ -8,7 +8,7 @@ import { ViewportScroller } from '@angular/common';
 export class HeaderComponent implements OnInit {
   @Input() showLinks = true;
   @Input() image = '../../../assets/img/intro-banner.jpg';
-  @Input() introHeight: string = '80vh';
+  @Input() introHeight = '80vh';
 
   constructor(public viewPortScroller: ViewportScroller) {}
 
