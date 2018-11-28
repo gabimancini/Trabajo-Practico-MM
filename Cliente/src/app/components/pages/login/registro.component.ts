@@ -69,10 +69,10 @@ export class RegistroComponent implements OnInit {
     );
 
     this._usuarioService.crearUsuario(usuario)
-      .subscribe(resp => {
-        console.log(resp);
-        this.router.navigate(['/login']);
-      });
+      // .subscribe(resp => {
+      //   console.log(resp);
+      //   this.router.navigate(['/login']);
+      // });
     // console.log('Forma Valida : ', this.forma.valid);
     // console.log(this.forma.value);
   }
