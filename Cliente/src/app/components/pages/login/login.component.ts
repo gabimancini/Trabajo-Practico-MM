@@ -28,10 +28,10 @@ export class LoginComponent implements OnInit {
     let usuario = new Usuario (forma.value.email, forma.value.clave);
 
     this._usuarioService.login(usuario)
-        .subscribe(resp => {
-          console.log(resp);
-          this.router.navigate(['/home']); 
-        });
+
+    console.log('logueado');
+    this.router.navigate(['/home']);
+
   }
 
 }
