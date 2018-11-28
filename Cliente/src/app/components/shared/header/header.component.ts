@@ -3,24 +3,17 @@ import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
-
 export class HeaderComponent implements OnInit {
-@Input() showLinks  = true;
-@Input() image = "../../../assets/img/intro-banner.jpg";  
-@Input() introHeight:string = "80vh";  
-  
-    constructor(public viewPortScroller: ViewportScroller) {
+  @Input() showLinks = true;
+  @Input() image = '../../../assets/img/intro-banner.jpg';
+  @Input() introHeight: string = '80vh';
 
+  constructor(public viewPortScroller: ViewportScroller) {}
 
-
-     }
-
-  ngOnInit() {
-
+  ngOnInit() {}
+  goToAnchor(anchor: string) {
+    this.viewPortScroller.scrollToAnchor(anchor);
   }
-goToAnchor(anchor: string){
-   this.viewPortScroller.scrollToAnchor(anchor)
-}
 }

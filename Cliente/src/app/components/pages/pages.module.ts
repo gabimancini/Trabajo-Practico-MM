@@ -9,44 +9,40 @@ import { CargodatosComponent } from './cargodatos/cargodatos.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GraficasComponent } from './graficas/graficas.component';
-//import { ProgressComponent } from './progress/progress.component';
+import { ProgressComponent } from './progress/progress.component';
 import { RegistroComponent } from './login/registro.component';
 import { CommonModule } from '@angular/common';
-
- import { AppModule } from '../../app.module';  
-
+import { SharedComponentsModule } from './../shared/components.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
-	declarations:[ 
-		ServiciosEmpresaComponent,
-	    ContactoComponent,
-	    HomeComponent,
-	    LoginEmpleadoComponent,
-	    LoginEmpleadorComponent,
-	    CargodatosComponent,
-	    LoginComponent,
-	    DashboardComponent,
-	    GraficasComponent,
-	   // ProgressComponent,
-	    RegistroComponent , 
-	],
-	exports:[
-		ServiciosEmpresaComponent,
-	    ContactoComponent,
-	    HomeComponent,
-	    LoginEmpleadoComponent,
-	    LoginEmpleadorComponent,
-	    CargodatosComponent,
-	    LoginComponent,
-	    DashboardComponent,
-	    GraficasComponent,
-	    //ProgressComponent,
-	    RegistroComponent,
- 
-	],
-	imports:[
-		AppModule,
-		BrowserModule 
-	]
-
+  declarations: [
+    ServiciosEmpresaComponent,
+    ContactoComponent,
+    HomeComponent,
+    LoginEmpleadoComponent,
+    LoginEmpleadorComponent,
+    CargodatosComponent,
+    LoginComponent,
+    DashboardComponent,
+    GraficasComponent,
+     ProgressComponent,
+    RegistroComponent,
+  ],
+  exports: [
+    ServiciosEmpresaComponent,
+    ContactoComponent,
+    HomeComponent,
+    LoginEmpleadoComponent,
+    LoginEmpleadorComponent,
+    CargodatosComponent,
+    LoginComponent,
+    DashboardComponent,
+    GraficasComponent,
+    ProgressComponent,
+    RegistroComponent,
+  ],
+  imports: [ CommonModule, BrowserModule, SharedComponentsModule, RouterModule, FormsModule, ReactiveFormsModule],
 })
+
 export class PagesModule {}
