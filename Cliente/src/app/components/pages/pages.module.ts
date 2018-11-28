@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import { SharedComponentsModule } from './../shared/components.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     ServiciosEmpresaComponent,
@@ -26,7 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     DashboardComponent,
     GraficasComponent,
-     ProgressComponent,
+    ProgressComponent,
     RegistroComponent,
   ],
   exports: [
@@ -42,7 +43,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProgressComponent,
     RegistroComponent,
   ],
-  imports: [ CommonModule, BrowserModule, SharedComponentsModule, RouterModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    SharedComponentsModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
 })
-
 export class PagesModule {}

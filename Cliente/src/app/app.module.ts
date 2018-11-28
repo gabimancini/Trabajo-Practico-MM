@@ -25,9 +25,6 @@ import { SharedComponentsModule } from './components/shared/components.module';
   imports: [
     BrowserModule,
     RoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
     PagesModule,
     SharedComponentsModule
   ],
