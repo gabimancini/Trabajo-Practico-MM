@@ -3,7 +3,7 @@ import { Usuario } from '../../modelos/usuario.model';
 import { HttpClient } from '../../../../node_modules/@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 
-import { map, take } from 'rxjs/operators';
+import { Router } from '../../../../node_modules/@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,8 @@ import { map, take } from 'rxjs/operators';
 export class UsuarioService {
 
   constructor(
-    public http: HttpClient
+    public http: HttpClient,
+    public router:Router
   ) {
     console.log('Servicio usuario listo');
   }
@@ -20,14 +21,16 @@ export class UsuarioService {
 
     let url = URL_SERVICIOS + 'usuario/registroUsuario';
 
-    //retornamos un observador al cual nos vamos a poder subscribir
-    return this.http.post(url,usuario)
-        .pipe(
-          map( (resp:any) => {
-            console.log("usuario creado", resp);
-            return resp.usuario;
-          })
-        )
+    return new Promise ( (resolve, reject) => {
+      this.http.post(url, usuario)
+        .toPromise()
+        .then( (resp) => {
+          resolve(resp)
+          console.log("Promesa ejecutada - crear", resp)
+          this.router.navigate(['/login'])
+        })
+        .catch(error => console.log('error en la promesa',Promise.reject(error)))
+    })
 
   }
 
@@ -35,15 +38,15 @@ export class UsuarioService {
 
     let url = URL_SERVICIOS + 'login';
 
-    return this.http.post(url, usuario)
-    .pipe(
-      map( (resp:any) => {
-        localStorage.setItem('id',resp.id);
-        localStorage.setItem('token',resp.token);
-        localStorage.setItem('usuario', JSON.stringify(resp.usuario) );
-      })
-    )
-
+    return new Promise ( (resolve, reject) => {
+        this.http.post(url, usuario)
+          .toPromise()
+          .then( (resp) => {
+            resolve(resp)
+            console.log("Promesa ejecutada - login")
+          })
+          .catch(error => console.log('error en la promesa-login',Promise.reject(error)))
+    });
 
   }
 
