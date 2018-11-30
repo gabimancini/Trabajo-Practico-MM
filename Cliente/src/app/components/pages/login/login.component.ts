@@ -27,8 +27,14 @@ export class LoginComponent implements OnInit {
 
     let usuario = new Usuario (forma.value.email, forma.value.clave);
 
+/*Validando usuario según empleado o empleador
     this._usuarioService.login(usuario)
+     .then((usuario)=>{
 
+         // Segun tipo de usuario va a redireccionar a un home diferente
+
+     })
+*/
     console.log('logueado');
     this.router.navigate(['/home']);
 

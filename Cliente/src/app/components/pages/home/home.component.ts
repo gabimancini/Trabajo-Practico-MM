@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 	
-  constructor() { }
+	 constructor( ) { }
+ //constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit() {
+  	/*const verificarUsuario = this.usuarioService.verificarSiUsuarioEstaLogueado();
+  	if (verificarUsuario === true){
+  		// En este punto sabemos que el usuario esta logueado
+  		const rolDeUsuario = this.usuarioService.verificarRolUsuario();
+  		if(rolDeUsuario === 'cliente'){
+  			this.mostrarContenidoCliente = true
+  		}
+  	}*/
   }
 
 }
