@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
      })
 */
     console.log('logueado');
-    this.router.navigate(['/home']);
+    this.router.navigate(['/empleado-interfaz']);
 
   }
 

@@ -16,7 +16,8 @@ import { SharedComponentsModule } from './../shared/components.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-@NgModule({
+import { EmpleadoInterfazComponent } from './empleado-interfaz/empleado-interfaz.component';
+ @NgModule({
   declarations: [
     ServiciosEmpresaComponent,
     ContactoComponent,
@@ -29,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     GraficasComponent,
     ProgressComponent,
     RegistroComponent,
+    EmpleadoInterfazComponent 
   ],
   exports: [
     ServiciosEmpresaComponent,
